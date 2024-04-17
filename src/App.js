@@ -1,4 +1,5 @@
 // import logo from './logo.svg';
+import { useState } from 'react';
 import bgvideo from './assets/nxt_wave_bg.mp4'
 import mainImg from "./assets/nx_wave_hero.png"
 import './App.css';
@@ -16,22 +17,20 @@ const Star = () => {
 }
 
 function App() {
+  const [phnumber, setNumber] = useState('')
+
+  const handleNumberChange = (e) => {
+    const re = /^[0-9\b]+$/;
+
+    // if value is not blank, then test the regex
+
+    if (e.target.value === '' || re.test(e.target.value)) {
+       setNumber(e.target.value)
+    }
+  }
+
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
       <div className='container'>
         <div className='background'>
           <video autoPlay muted loop playsInline className='video-bg'>
@@ -61,6 +60,14 @@ function App() {
                 <span>5x Rewards</span>
                 <Star />
                 <span>Zero Forex Markup</span>
+              </div>
+              <div className='form-container'>
+                <form>
+                  <div className='input-container'>
+                    <input value={phnumber} onChange={handleNumberChange} placeholder='Enter Phone Number'></input>
+                    <button>Apply Now</button>
+                  </div>
+                </form>
               </div>
             </div>
             <img src={mainImg} className='fc-img' />

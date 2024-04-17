@@ -136,3 +136,32 @@ h1 {
   font-weight: 500;
   margin-bottom: 2.25rem;
 }
+
+.form-container {
+  width: 320px
+}
+
+.input-container {
+  height: 44px;
+  padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+  background-color: #000;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+input {
+  border: none;
+  outline: none;
+  background-color: #000;
+  color: #fff;
+  width: 11rem;
+}
+
+button {
+  background-color: rgba(253, 239, 120);
+  color: #000;
+  border-radius: 0.75rem;
+  cursor: pointer;
+}
